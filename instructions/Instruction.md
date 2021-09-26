@@ -1,6 +1,6 @@
 # Utilisation du logiciel
 
-- [Interface graphique](#interface graphique)
+- [Interface graphique](#interface-graphique-gtk)
 - [CLI](#cli)
 - [Fichiers de configuration/cache](#configcache-files)
 - [Trucs, astuces et bugs connus](#tips-tricks-and-known-bugs)
