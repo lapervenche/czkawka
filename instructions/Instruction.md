@@ -4,7 +4,7 @@
 - [CLI](#cli)
 - [Fichiers de configuration/cache](#configcache-files)
 - [Trucs, astuces et bugs connus](#tips-tricks-and-known-bugs)
-- [Outils](#tools)
+- [Outils](#outils)
 
 Czkawka pour l'instant contient deux fronts indépendants - l'interface terminale et graphique qui partagent le module de base.
 L'utilisation du langage Rust sans que le code soit dangereux aide à créer une application sécurisée, rapide et nécessitant peu de ressources. Ce code a également un bon soutien pour le multi-threading.
