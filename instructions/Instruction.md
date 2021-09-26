@@ -2,7 +2,7 @@
 
 - [Interface graphique](#interface-graphique-gtk)
 - [CLI](#cli)
-- [Fichiers de configuration/cache](#fichiers-de-configuration-/-cache)
+- [Fichiers de configuration/cache](#fichiers-de-configuration-cache)
 - [Trucs, astuces et bugs connus](#tips-tricks-and-known-bugs)
 - [Outils](#outils)
 
@@ -76,7 +76,7 @@ Si vous souhaitez obtenir des informations plus détaillées sur certains outils
 Par défaut, tous les outils n'écrivent que sur les résultats dans la console, mais il est possible avec des arguments spécifiques de supprimer certains fichiers/arguments ou de les enregistrer dans un fichier.
 
 
-## Fichiers de configuration/cache
+## Fichiers de configuration cache
 Actuellement, Czkawka stocke quelques fichiers de configuration et de cache sur le disque :
 - `czkawka_gui_config.txt` - stocke la configuration de l'interface graphique qui peut être chargée au démarrage
 - `cache_similar_image.txt` - stocke les données de cache et les hachages qui peuvent être utilisés ultérieurement sans avoir à recalculer le hachage de l'image - la modification de ce fichier peut provoquer des plantages de l'application.
