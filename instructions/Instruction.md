@@ -1,7 +1,7 @@
 # Utilisation du logiciel
 
 - [Interface graphique](#gui-gtk)
-- [Interface graphique](#Interface graphique GTK)
+- [Interface graphique](#interface-graphique-GTK)
 - [CLI](#cli)
 - [Fichiers de configuration/cache](#configcache-files)
 - [Trucs, astuces et bugs connus](#tips-tricks-and-known-bugs)
