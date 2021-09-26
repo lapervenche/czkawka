@@ -74,7 +74,7 @@ This program is free to use and will always be.
             <property name="margin-bottom">3</property>
             <child>
               <object class="GtkButton" id="button_repository">
-                <property name="label" translatable="yes">Repository</property>
+                <property name="label" translatable="yes">Dépôt</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -100,7 +100,7 @@ This program is free to use and will always be.
             </child>
             <child>
               <object class="GtkButton" id="button_donation">
-                <property name="label" translatable="yes">Donation</property>
+                <property name="label" translatable="yes">Don</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
