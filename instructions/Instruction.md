@@ -1,7 +1,6 @@
 # Utilisation du logiciel
 
 - [Interface graphique](#gui-gtk)
-- [Interface graphique](#interface-graphique-GTK)
 - [CLI](#cli)
 - [Fichiers de configuration/cache](#configcache-files)
 - [Trucs, astuces et bugs connus](#tips-tricks-and-known-bugs)
@@ -10,8 +9,7 @@
 Czkawka pour l'instant contient deux fronts indépendants - l'interface terminale et graphique qui partagent le module de base.
 L'utilisation du langage Rust sans que le code soit dangereux aide à créer une application sécurisée, rapide et nécessitant peu de ressources. Ce code a également un bon soutien pour le multi-threading.
 
-## 
-Interface graphique GTK
+## Interface graphique GTK
 <img src="https://user-images.githubusercontent.com/41945903/103002387-14d1b800-452f-11eb-967e-9d5905dd6db5.png" width="800" />
 
 ### Présentation de l'interface graphique
