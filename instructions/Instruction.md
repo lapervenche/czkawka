@@ -2,7 +2,7 @@
 
 - [Interface graphique](#interface-graphique-gtk)
 - [CLI](#cli)
-- [Fichiers de configuration/cache](#configcache-files)
+- [Fichiers de configuration/cache](#fichiers-de-configuration/cache)
 - [Trucs, astuces et bugs connus](#tips-tricks-and-known-bugs)
 - [Outils](#outils)
 
