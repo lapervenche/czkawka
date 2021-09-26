@@ -3,7 +3,7 @@
 - [Interface graphique](#interface-graphique-gtk)
 - [CLI](#cli)
 - [Fichiers de configuration/cache](#fichiers-de-configuration-cache)
-- [Trucs, astuces et bugs connus](#trucs,-astuces-et-bugs-connus])
+- [Trucs astuces et bugs connus](#trucs-astuces-et-bugs-connus])
 - [Outils](#outils)
 
 Czkawka pour l'instant contient deux fronts indépendants - l'interface terminale et graphique qui partagent le module de base.
@@ -97,7 +97,7 @@ Linux - `/home/username/.cache/czkawka`
 Mac - `/Users/Username/Library/Caches/pl.Qarmin.Czkawka`  
 Windows - `C:\Users\Username\AppData\Local\Qarmin\Czkawka\cache`
 
-## Trucs, astuces et bugs connus
+## Trucs astuces et bugs connus
 - **Ajout manuel de plusieurs répertoires**  
 Vous pouvez éditer manuellement le fichier de configuration `czkawka_gui_config.txt` et ajouter/supprimer/modifier des répertoires comme vous le souhaitez. Après avoir défini les valeurs requises, la configuration doit être chargée dans Czkawka.
 
