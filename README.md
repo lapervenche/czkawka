@@ -148,7 +148,7 @@ Le code est distribué sous licence MIT.
 
 L'icône a été créé par [jannuary](https://github.com/jannuary) et sous licence CC-BY-4.0.
 
-Le thème sombre de Windows est utilisé à partir du[référentiel AdMin](https://github.com/nrhodes91/AdMin) avec une licence MIT.
+Le thème sombre de Windows est utilisé à partir du [référentiel AdMin](https://github.com/nrhodes91/AdMin) avec une licence MIT.
 
 Le programme est entièrement gratuit à utiliser.
 
