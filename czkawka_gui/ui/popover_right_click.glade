@@ -42,7 +42,7 @@ Author: Rafał Mikrut
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkButton" id="buttons_popover_right_click_open_file">
-            <property name="label" translatable="yes">Open File</property>
+            <property name="label" translatable="yes">Ouvrir Fichier</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
@@ -55,7 +55,7 @@ Author: Rafał Mikrut
         </child>
         <child>
           <object class="GtkButton" id="buttons_popover_right_click_open_folder">
-            <property name="label" translatable="yes">Open Folder</property>
+            <property name="label" translatable="yes">Ouvrir Dossier</property>
             <property name="visible">True</property>
             <property name="can-focus">True</property>
             <property name="receives-default">True</property>
