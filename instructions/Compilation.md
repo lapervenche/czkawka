@@ -1,6 +1,6 @@
 # Compilation de Czkawka à partir de codes sources
 
-## RLes Conditions
+## Les Conditions
 Programme  | Minimum  | Pourquoi
 -----------|----------|------------------------------------------------------------
 Rust       |   1.51   | Czkawka, aims to support the latest available version of Rust on Ubuntu 20.04
@@ -31,7 +31,7 @@ rustup-init
 brew install rust gtk+3
 ```
 
-### les fenêtres
+### Les fenêtres
 
 *Sera disponible à l'avenir*
 
