@@ -80,7 +80,7 @@ Author: Rafał Mikrut
                     <property name="orientation">vertical</property>
                     <child>
                       <object class="GtkCheckButton" id="check_button_settings_load_at_start">
-                        <property name="label" translatable="yes">Load configuration at start</property>
+                        <property name="label" translatable="yes">Charger la configuration au début</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">False</property>
@@ -95,7 +95,7 @@ Author: Rafał Mikrut
                     </child>
                     <child>
                       <object class="GtkCheckButton" id="check_button_settings_save_at_exit">
-                        <property name="label" translatable="yes">Save configuration at exit</property>
+                        <property name="label" translatable="yes">Enregistrer la configuration à la sortie</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">False</property>
@@ -110,7 +110,7 @@ Author: Rafał Mikrut
                     </child>
                     <child>
                       <object class="GtkCheckButton" id="check_button_settings_confirm_deletion">
-                        <property name="label" translatable="yes">Show confirm dialog when deleting</property>
+                        <property name="label" translatable="yes">Afficher la boîte de dialogue Confirmer lorsque vous supprimez</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">False</property>
@@ -125,7 +125,7 @@ Author: Rafał Mikrut
                     </child>
                     <child>
                       <object class="GtkCheckButton" id="check_button_settings_confirm_group_deletion">
-                        <property name="label" translatable="yes">Show confirm dialog when deleting all files in group</property>
+                        <property name="label" translatable="yes">Afficher la boîte de dialogue Confirmer lorsque vous supprimez tous les fichiers du groupe</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">False</property>
@@ -140,7 +140,7 @@ Author: Rafał Mikrut
                     </child>
                     <child>
                       <object class="GtkCheckButton" id="check_button_settings_show_text_view">
-                        <property name="label" translatable="yes">Show bottom text panel</property>
+                        <property name="label" translatable="yes">Afficher le panneau de texte inférieur</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">False</property>
@@ -155,7 +155,7 @@ Author: Rafał Mikrut
                     </child>
                     <child>
                       <object class="GtkCheckButton" id="check_button_settings_use_cache">
-                        <property name="label" translatable="yes">Use cache</property>
+                        <property name="label" translatable="yes">Utiliser le cache</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">False</property>
@@ -170,7 +170,7 @@ Author: Rafał Mikrut
                     </child>
                     <child>
                       <object class="GtkCheckButton" id="check_button_settings_use_trash">
-                        <property name="label" translatable="yes">Move deleted files to trash</property>
+                        <property name="label" translatable="yes">Déplacez les fichiers supprimés à la corbeille</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">False</property>
@@ -196,7 +196,7 @@ Author: Rafał Mikrut
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">General</property>
+                <property name="label" translatable="yes">Général</property>
               </object>
               <packing>
                 <property name="tab-fill">False</property>
@@ -209,7 +209,7 @@ Author: Rafał Mikrut
                 <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkCheckButton" id="check_button_settings_hide_hard_links">
-                    <property name="label" translatable="yes">Hide hard links(only Linux and MacOS)</property>
+                    <property name="label" translatable="yes">Masquer les liens durs(seulement Linux et MacOS)</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
@@ -224,7 +224,7 @@ Author: Rafał Mikrut
                 </child>
                 <child>
                   <object class="GtkCheckButton" id="check_button_settings_show_preview_duplicates">
-                    <property name="label" translatable="yes">Show image preview</property>
+                    <property name="label" translatable="yes">Afficher Aperçu de l'image</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
@@ -247,7 +247,7 @@ Author: Rafał Mikrut
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Minimal cached file size in bytes</property>
+                        <property name="label" translatable="yes">Taille de fichier mis en cache minimale en bytes</property>
                       </object>
                       <packing>
                         <property name="expand">True</property>
@@ -287,7 +287,7 @@ Author: Rafał Mikrut
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Duplicate Finder</property>
+                <property name="label" translatable="yes">Dupliquer Finder</property>
               </object>
               <packing>
                 <property name="position">1</property>
@@ -301,7 +301,7 @@ Author: Rafał Mikrut
                 <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkCheckButton" id="check_button_settings_show_preview_similar_images">
-                    <property name="label" translatable="yes">Show image preview</property>
+                    <property name="label" translatable="yes">Afficher Aperçu de l'image</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
@@ -323,7 +323,7 @@ Author: Rafał Mikrut
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Similar Images</property>
+                <property name="label" translatable="yes">Images similairess</property>
               </object>
               <packing>
                 <property name="position">2</property>
@@ -346,7 +346,7 @@ Author: Rafał Mikrut
             <property name="spacing">3</property>
             <child>
               <object class="GtkButton" id="button_settings_load_configuration">
-                <property name="label" translatable="yes">Load configuration</property>
+                <property name="label" translatable="yes">Configuration du chargement</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -359,7 +359,7 @@ Author: Rafał Mikrut
             </child>
             <child>
               <object class="GtkButton" id="button_settings_reset_configuration">
-                <property name="label" translatable="yes">Reset configuration</property>
+                <property name="label" translatable="yes">Réinitialiser la configuration</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -372,7 +372,7 @@ Author: Rafał Mikrut
             </child>
             <child>
               <object class="GtkButton" id="button_settings_save_configuration">
-                <property name="label" translatable="yes">Save configuration</property>
+                <property name="label" translatable="yes">Enregistrer la configuration</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
