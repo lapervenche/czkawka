@@ -3,7 +3,7 @@
 - [Interface graphique](#interface-graphique-gtk)
 - [CLI](#cli)
 - [Fichiers de configuration/cache](#fichiers-de-configuration-cache)
-- [Trucs astuces bugs connus](#trucs-astuces-bugs-connus])
+- [Trucs astuces bugs connus](#trucs-astuces-bugs-connus)
 - [Outils](#outils)
 
 Czkawka pour l'instant contient deux fronts indépendants - l'interface terminale et graphique qui partagent le module de base.
