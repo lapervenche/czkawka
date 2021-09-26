@@ -1,12 +1,12 @@
-# Compiling Czkawka from sources
+# Compilation de Czkawka à partir de codes sources
 
-## Requirements
-Program  | Min  | What for
----------|------|------------------------------------------------------------
-Rust     | 1.51 | Czkawka, aims to support the latest available version of Rust on Ubuntu 20.04
-GTK      | 3.22 | Only for the `GTK` backend
+## RLes Conditions
+Programme  | Minimum  | Pourquoi
+-----------|----------|------------------------------------------------------------
+Rust       |   1.51   | Czkawka, aims to support the latest available version of Rust on Ubuntu 20.04
+GTK        |   3.22   | Only for the `GTK` backend
 
-If you only want the terminal version without a GUI, just skip all the packages with `gtk` in their names.
+Si vous souhaitez uniquement la version terminal sans interface graphique, ignorez simplement tous les packages contenant pour nom `gtk`.
 
 #### Debian / Ubuntu
 ```shell
@@ -22,7 +22,8 @@ sudo yum install gtk3-devel glib2-devel alsa-lib-devel # Latest is optional
 ```
 
 #### macOS
-You need to install Rust via Homebrew and GTK Libraries
+
+Vous devez installer Rust via les bibliothèques Homebrew et GTK
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install rustup
@@ -30,11 +31,11 @@ rustup-init
 brew install rust gtk+3
 ```
 
-### Windows
+### les fenêtres
 
-*Will be available in the future*
+*Sera disponible à l'avenir*
 
-For Linux-to-Windows cross-building instruction look at the CI.
+Pour les instructions croisées de Linux à Windows, regardez le CI.
 
 <!-- First you need to install Visual C++ components from Visual Studio installer - https://visualstudio.microsoft.com/downloads/
 Next install Rust from site https://rustup.rs/
@@ -43,27 +44,26 @@ After that the latest GTK 3 runtime must be installed from https://github.com/ts
 
 ## Compilation
 
-- Download the source
+- Télécharger la source
 ```
 git clone https://github.com/qarmin/czkawka.git
 cd czkawka
 ```
-- Compile and run GTK GUI
+- Compiler et exécuter l'interface graphique GTK
 ```
 cargo run --release --bin czkawka_gui
 ```
 
-- Compile and run CLI (by default this will print help with examples)
+- Compilez et exécutez la CLI (par défaut, cela imprimera l'aide avec des exemples)
 ```
 cargo run --release --bin czkawka_cli
 ```
 
 
-## Additional features
-For now, finding broken audio files is temporary disabled by default, because it crashes when audio libraries are not found on the computer.  
-I'm waiting for ability to disable audio playback feature, so after that I will be able to re-enable by default this feature (https://github.com/RustAudio/rodio/issues/349)
+## Caractéristiques supplémentaires
+Pour l'instant, la recherche de fichiers audio endommagés est temporairement désactivée par défaut, car elle se bloque lorsque les bibliothèques audio ne sont pas trouvées sur l'ordinateur. J'attends la possibilité de désactiver la fonction de lecture audio, donc après cela, je pourrai réactiver par défaut cette fonctionnalité (https://github.com/RustAudio/rodio/issues/349)
 
-To enable checking for broken audio files, just add ` --all-features`
+Pour activer la vérification des fichiers audio cassés, ajoutez simplement ` --all-features`
 ```
 cargo run --all-features --bin czkawka_cli -- broken  -d /home/rafal/ -f "results.txt"
 ```
