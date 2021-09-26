@@ -1,10 +1,11 @@
-# Installation
-## Requirements
+# Installation de Czkawka
+## conditions
 ### Linux
-If you use Snap, Flatpak or Appimage, you may skip this section.
+Si vous utilisez Snap, Flatpak ou Appimage, vous pouvez ignorer cette section.
 
-For Czkawka GUI you are required to have at least `GTK 3.22` and also `Alsa` installed (for finding broken music files, but it is disabled by default).  
-It should be installed by default on all the most popular distros.
+Pour l'interface graphique de Czkawka, vous devez au moins avoir installé `GTK 3.22` et également `Alsa` (pour trouver des fichiers de musique cassés, fonction désactivée par défaut) sur votre pc. 
+ 
+Il devrait être installé par défaut sur toutes les distributions les plus populaires.
 #### Ubuntu/Debian
 ```
 sudo apt install libgtk-3-dev
@@ -19,73 +20,73 @@ sudo xbps-install gcc pkg-config alsa-lib-devel
 ```
 
 ### macOS
-Currently, you need to manually install `GTK 3` libraries and the Adwaita theme, because they are dynamically loaded from the OS (*we need
-help in using static linking*). One very straight-forward way to do this is by using [Homebrew](https://brew.sh/). Installation in the terminal:
+Actuellement, vous devez installer manuellement les bibliothèques `GTK 3` et le thème Adwaita.
+Ils sont chargés dynamiquement à partir du système d'exploitation ( nous avons besoin d'aide pour utiliser les liens statiques ). 
+Une façon très simple de le faire est d'utiliser [Homebrew](https://brew.sh/). Installation dans le terminal:
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install gtk+3 adwaita-icon-theme
 ```
-After that, go to the location where you downloaded Czkawka and add the `executable` permission to this file.
+Après cela, allez à l'emplacement où vous avez téléchargé Czkawka et ajoutez l'autorisation `executable` à ce fichier.
 ```shell
 chmod +x mac_czkawka_gui
 ```
-At the end execute it:
+À la fin, exécutez-le :
 ```shell
 ./mac_czkawka_gui
 ```
 
-### Windows
-By default, all needed libraries are bundled with the app, inside `windows_czkawka_gui.zip`, but if you compile the app or just move `czkawka_gui.exe`, then you will need to install the `GTK 3`
-runtime from [**here**](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases).
+### Les fenêtres
+Par défaut, toutes les bibliothèques nécessaires sont fournies avec l'application.
+A l'intérieur du fichier `windows_czkawka_gui.zip`,Si vous compilez l'application ou déplacez simplement  `czkawka_gui.exe`,vous devrez installer le runtime `GTK 3` à partir d'ici [**d'ici**](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases)..
 
 ## Installation
-### Precompiled binaries
-Ready-to-go executables for Linux, Windows and macOS are available [**here**](https://github.com/qarmin/czkawka/releases/).  
-If the app does not run when clicking the launcher, run it through a terminal.  
-You don't need to have any additional libraries for CLI Czkawka.
+### Fichiers binaires précompilés
+Des exécutables prêts à l'emploi pour Linux, Windows et macOS sont disponibles [**ici**](https://github.com/qarmin/czkawka/releases/).  
+Si l'application ne s'exécute pas lorsque vous cliquez sur le lanceur, exécutez-la via un terminal. 
+Vous n'avez pas besoin de bibliothèques supplémentaires pour CLI Czkawka.
 
 ### Nightly Builds
-Artifacts from each commit can be downloaded [**here**](https://github.com/qarmin/czkawka/actions)
+Les artefacts de chaque commit peuvent être téléchargés [**ici**](https://github.com/qarmin/czkawka/actions)
 
 ### Appimage
-Appimage files are available in release page - [**GitHub releases**](https://github.com/qarmin/czkawka/releases/)  
-This version is bundled with its own theme.  
-There is also a small problem with not being able to open 2 images at once.
+Les fichiers Appimage sont disponibles dans la page de publication - [**GitHub releases**](https://github.com/qarmin/czkawka/releases/)  
+Cette version est livrée avec son propre thème.  
+Il y a aussi le petit problème de ne pas pouvoir ouvrir 2 images à la fois.
 
 ### Cargo
-The easiest method to install Czkawka is using the `cargo` command. To compile it, you need to get all the
-requirements from the [compilation section](Compilation.md).
+La méthode la plus simple pour installer Czkawka consiste à utiliser la commande `cargo`. Pour le compiler, vous devez obtenir toutes les conditions requises dans la  [section compilation](Compilation.md).
+
 ```
 cargo install czkawka_gui
 cargo install czkawka_cli
 ```
-You can update the package with the same command.
+Vous pouvez mettre à jour le package avec la même commande.
 
 ### Snap
 ```
 sudo snap install czkawka
 ```
-By default, Snap can only access the files in your home directory. You have to allow czkawka access to all the drives:
+Par défaut, Snap ne peut accéder qu'aux fichiers de votre répertoire personnel. Vous devez autoriser czkawka à accéder à tous les lecteurs :
 
 ```
 sudo snap connect czkawka:removable-media
 ```
 
-The Snap store entry can be found [**here**](https://snapcraft.io/czkawka).
+L'entrée du magasin Snap peut être trouvée [**ici**](https://snapcraft.io/czkawka).
 
-Fresh builds are available in edge branch, but they may be a little unstable, although that happens very rarely
-because I don't push untested code.
+De nouvelles versions sont disponibles dans la branche Edge, mais elles peuvent être un peu instables,bien que cela se produise très rarement car je ne pousse pas de code non testé.
 
 ### Flatpak
 ```
 flatpak install flathub com.github.qarmin.czkawka
 ```
-Flathub page with Czkawka can be found [**here**](https://flathub.org/apps/details/com.github.qarmin.czkawka)
+La page Flathub avec Czkawka peut être trouvée [**ici**](https://flathub.org/apps/details/com.github.qarmin.czkawka)
 
 #
 #
 
-**Unofficial packages, which may not always provide the latest version of Czkawka.**
+**Paquets non officiels, qui peuvent ne pas toujours fournir la dernière version de Czkawka.**
 
 ### PPA - Debian/Ubuntu (unofficial)
 ```
@@ -95,17 +96,17 @@ sudo apt-get install czkawka
 ```
 
 ### AUR - Arch Linux Package (unofficial)
-Czkawka is also available in Arch Linux's AUR from which it can be easily installed.
+Czkawka est également disponible dans l'AUR d'Arch Linux à partir duquel il peut être facilement installé.
 ```
 yay -Syu czkawka-git
 ```
-or
+ou
 ```
 yay -Syu czkawka-gui-bin
 yay -Syu czkawka-cli-bin
 ```
 
-Package info's - https://aur.archlinux.org/packages/?O=0&SeB=nd&K=czkawka&outdated=&SB=n&SO=a&PP=50&do_Search=Go
+Informations sur le paquet - https://aur.archlinux.org/packages/?O=0&SeB=nd&K=czkawka&outdated=&SB=n&SO=a&PP=50&do_Search=Go
 
 ### Docker image (unofficial)
-Czkawka docker image is available [**here**](https://github.com/jlesage/docker-czkawka)
+L'image du docker Czkawka est disponible [**ici**](https://github.com/jlesage/docker-czkawka)
