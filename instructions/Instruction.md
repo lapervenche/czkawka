@@ -1,235 +1,239 @@
-# Instruction
+# Utilisation du logiciel
 
-- [GUI](#gui-gtk)
+- [Interface graphique](#gui-gtk)
 - [CLI](#cli)
-- [Config / Cache files](#configcache-files)
-- [Tips, tricks and known bugs](#tips-tricks-and-known-bugs)
-- [Tools](#tools)
+- [Fichiers de configuration/cache](#configcache-files)
+- [Trucs, astuces et bugs connus](#tips-tricks-and-known-bugs)
+- [Outils](#tools)
 
-Czkawka for now contains two independent frontends - the terminal and graphical interface which share the core module.
-Using Rust language without unsafe code helps to create safe, fast, and low resources requirements app.
-This code also has good support for multi-threading.
+Czkawka pour l'instant contient deux fronts indépendants - l'interface terminale et graphique qui partagent le module de base.
+L'utilisation du langage Rust sans que le code soit dangereux aide à créer une application sécurisée, rapide et nécessitant peu de ressources. Ce code a également un bon soutien pour le multi-threading.
 
-## GUI GTK
+## 
+Interface graphique GTK
 <img src="https://user-images.githubusercontent.com/41945903/103002387-14d1b800-452f-11eb-967e-9d5905dd6db5.png" width="800" />
 
-### GUI overview
-The GUI is built from different pieces:
-- Red - Program settings, contains info about included/excluded directories which user may want to check. Also, there is a tab with allowed extensions, which allows users to choose which type of files they want to check. Next category is Excluded items, which allows to discard specific path by using `*` wildcard - so `/home/ra*` means that e.g. `/home/rafal/` will be ignored but not `/home/czkawka/`. The last one is settings tab which allows to save configuration of the program, reset and load it when needed.
-- Green - This allows to choose which tool we want to use.
-- Blue - Here are settings for the current tool, which we want/need to configure
-- Pink - Window in which results of searching are printed
-- Yellow - Box with buttons like `Search`(starts searching with the currently selected tool), `Hide Text View`(hides text box at the bottom with white overlay), `Symlink`(creates symlink to selected file), `Select`(shows options to select specific rows), `Delete`(deletes selected files), `Save`(save to file the search result) - some buttons are only visible when at least one result is visible.
-- Brown - Small informative field to show informations e.g. about number of found duplicate files
-- White - Text window to show possible errors/warnings e.g. when failed to delete folder due no permissions etc.
+### Présentation de l'interface graphique
+L'interface graphique est construite à partir de différentes pièces :
 
-There is also an option to see image previews in Similar Images tool.
+Rouge - Paramètres du programme, contient des informations sur les répertoires inclus/exclus que l'utilisateur peut vouloir vérifier. En outre, il existe un onglet avec les extensions autorisées, qui permet aux utilisateurs de choisir le type de fichiers qu'ils souhaitent vérifier. La catégorie suivante est les éléments exclus, ce qui permet d'ignorer un chemin spécifique en utilisant un *caractère générique, ce /home/ra*qui signifie que, par exemple, /home/rafal/sera ignoré mais pas /home/czkawka/. Le dernier est l'onglet Paramètres qui permet d'enregistrer la configuration du programme, de le réinitialiser et de le charger si nécessaire.
+
+Vert - Cela permet de choisir l'outil que nous voulons utiliser.
+
+Bleu - Voici les paramètres de l'outil actuel, que nous voulons / devons configurer
+
+Rose - Fenêtre dans laquelle les résultats de la recherche sont imprimés
+
+Jaune - Boîte avec des boutons comme Search(commence la recherche avec l'outil actuellement sélectionné), Hide Text View(masque la zone de texte en bas avec une superposition blanche), Symlink(crée un lien symbolique vers le fichier sélectionné), Select(affiche les options pour sélectionner des lignes spécifiques), Delete(supprime les fichiers sélectionnés) , Save(enregistrer pour archiver le résultat de la recherche) - certains boutons ne sont visibles que lorsqu'au moins un résultat est visible.
+
+Marron - Petit champ informatif pour afficher des informations, par exemple sur le nombre de fichiers en double trouvés
+
+Blanc - Fenêtre de texte pour afficher les erreurs/avertissements possibles, par exemple en cas d'échec de la suppression du dossier en raison de l'absence d'autorisations, etc.
+
+Il existe également une option pour voir les aperçus d'images dans l'outil Images similaires.
 
 <img src="https://user-images.githubusercontent.com/41945903/103025544-50ca4480-4552-11eb-9a54-f1b1f6f725b1.png" width="800" />
 
-### Action Buttons
-There are several buttons which do different actions:
-- Search - starts searching and shows progress dialog
-- Stop - button in progress dialog, allows to easily stop current task. Sometimes it may take a few seconds until all atomic operations end and GUI will  become responsive again
-- Select - allows selecting multiple entries at once
-- Delete - deletes entirely all selected entries
-- Symlink - creates symlink to selected files(first file is threaten as original and rest will become symlinks)
-- Save - save initial state of results
-- Hamburger(parallel lines) - used to show/hide bottom text panel which shows warnings/errors
-- Add (directories) - adds directories to include or exclude
-- Remove (directories) - removes directories to search or to exclude
-- Manual Add (directories) - allows to input by typing directories (may be used to enter non visible in file manager directories)
-- Save current configuration - saves current GUI configuration to configuration file
-- Load configuration - loads configuration of file and overrides current GUI config
-- Reset configuration - resets current GUI configuration to defaults
+### Boutons d'action
 
-### Opening/Manipulating files
-It is possible to open selected files by double clicking on them.
+Il y a plusieurs boutons qui font différentes actions :
 
-To open multiple file just select desired files with CTRL key pressed and still when clicking this key, double click at selected items with left mouse button.
+- Rechercher - démarre la recherche et affiche la boîte de dialogue de progression
+- Arrêter - bouton dans la boîte de dialogue en cours, permet d'arrêter facilement la tâche en cours. Parfois, cela peut prendre quelques secondes jusqu'à ce que toutes les opérations atomiques se terminent et que l'interface graphique redevienne réactive
+- Sélectionner - permet de sélectionner plusieurs entrées à la fois
+- Supprimer - supprime entièrement toutes les entrées sélectionnées
+- Lien symbolique - crée un lien symbolique vers les fichiers sélectionnés (le premier fichier est menacé comme original et le reste deviendra des liens symboliques)
+- Enregistrer - enregistrer l'état initial des résultats
+- Hamburger (lignes parallèles) - utilisé pour afficher/masquer le panneau de texte inférieur qui affiche les avertissements/erreurs
+- Ajouter (répertoires) - ajoute des répertoires à inclure ou à exclure
+- Supprimer (répertoires) - supprime les répertoires à rechercher ou à exclure
+- Ajout manuel (répertoires) - permet de saisir en tapant des répertoires (peut être utilisé pour entrer des répertoires non visibles dans le gestionnaire de fichiers)
+- Enregistrer la configuration actuelle - enregistre la configuration actuelle de l'interface graphique dans le fichier de configuration
+- Charger la configuration - charge la configuration du fichier et remplace la configuration actuelle de l'interface graphique
+- Réinitialiser la configuration - réinitialise la configuration actuelle de l'interface graphique aux valeurs par défaut
 
-To open folder containing selected file, just click twice on it with right mouse button.
+### Ouverture/Manipulation de fichiers
+
+Il est possible d'ouvrir les fichiers sélectionnés en double-cliquant dessus.
+
+Pour ouvrir plusieurs fichiers, sélectionnez simplement les fichiers souhaités avec la touche CTRL enfoncée et toujours en cliquant sur cette touche, double-cliquez sur les éléments sélectionnés avec le bouton gauche de la souris.
+
+Pour ouvrir le dossier contenant le fichier sélectionné, cliquez simplement deux fois dessus avec le bouton droit de la souris.
 
 
 ## CLI
-Czkawka CLI frontend is great to automate some tasks like removing empty directories.
+L'interface CLI Czkawka est idéale pour automatiser certaines tâches telles que la suppression de répertoires vides.
 
-To get general info how to use it just try to open czkawka_cli in console `czkawka_cli`
+Pour obtenir des informations générales sur son utilisation, essayez simplement d'ouvrir czkawka_cli dans la console `czkawka_cli`
 
 <img src="https://user-images.githubusercontent.com/41945903/103018271-3d64ac80-4545-11eb-975c-2132f2ccf66f.png" width="800" />
 
-You should see a lot of examples how to use this app.
+Vous devriez voir beaucoup d'exemples d'utilisation de cette application.
 
-If you want to get more detailed info about certain tool, just add after its name  `-h` or `--help` to get more details.
+Si vous souhaitez obtenir des informations plus détaillées sur certains outils, ajoutez simplement après son nom `-h` ou `--help` pour obtenir plus de détails.
 
 <img src="https://user-images.githubusercontent.com/41945903/103018151-0a221d80-4545-11eb-97b2-d7d77b49c735.png" width="800" />
 
-By default, all tools only write about results to console, but it is possible with specific arguments to delete some files/arguments or save it to file.
+Par défaut, tous les outils n'écrivent que sur les résultats dans la console, mais il est possible avec des arguments spécifiques de supprimer certains fichiers/arguments ou de les enregistrer dans un fichier.
 
-## Config/Cache files
-Currently, Czkawka stores few config and cache files on disk:
-- `czkawka_gui_config.txt` - stores configuration of GUI which may be loaded at startup
-- `cache_similar_image.txt` - stores cache data and hashes which may be used later without needing to compute image hash again - editing this file may cause app crashes.
-- `cache_broken_files.txt` - stores cache data of broken files
-- `cache_duplicates_Blake3.txt` - stores cache data of duplicated files, to not suffer too big of a performance hit when saving/loading file, only already fully hashed files bigger than 5MB are stored. Similar files with replaced `Blake3` to e.g. `SHA256` may be shown, when support for new hashes will be introduced in Czkawka.
 
-Config files are located in this path:
+## Fichiers de configuration/cache
+Actuellement, Czkawka stocke quelques fichiers de configuration et de cache sur le disque :
+- `czkawka_gui_config.txt` - stocke la configuration de l'interface graphique qui peut être chargée au démarrage
+- `cache_similar_image.txt` - stocke les données de cache et les hachages qui peuvent être utilisés ultérieurement sans avoir à recalculer le hachage de l'image - la modification de ce fichier peut provoquer des plantages de l'application.
+
+- `cache_broken_files.txt` - stocke les données de cache des fichiers cassés
+- `cache_duplicates_Blake3.txt` - stocke les données de cache des fichiers dupliqués, pour ne pas subir un impact trop important sur les performances lors de l'enregistrement/du chargement du fichier, seuls les fichiers déjà entièrement hachés de plus de 5 Mo sont stockés. Des fichiers similaires remplacés Blake3par exemple par SHA256peuvent être affichés, lorsque la prise en charge de nouveaux hachages sera introduite dans Czkawka.
+
+
+Les fichiers de configuration se trouvent dans ce chemin :
 
 Linux - `/home/username/.config/czkawka`  
 Mac - `/Users/username/Library/Application Support/pl.Qarmin.Czkawka`  
 Windows - `C:\Users\Username\AppData\Roaming\Qarmin\Czkawka\config`
 
-Cache should be here:
+Le cache devrait être ici :
 
 Linux - `/home/username/.cache/czkawka`  
 Mac - `/Users/Username/Library/Caches/pl.Qarmin.Czkawka`  
 Windows - `C:\Users\Username\AppData\Local\Qarmin\Czkawka\cache`
 
-## Tips, Tricks and Known Bugs
-- **Manually adding multiple directories**  
-  You can manually edit config file `czkawka_gui_config.txt` and add/remove/change directories as you want. After setting required values, configuration must be loaded to Czkawka.
-- **Slow checking of little number similar images**  
-  If you checked before a large number of images (several tens of thousands) and they are still present on the disk, then the required information  about all of them is loaded from and saved to the cache, even if you are working with only few image files. You can rename cache file `cache_similar_image.txt`(to be able to use it again) or delete it - cache will then regenerate but with smaller number of entries and this way it should load and save a lot of faster.
-- **Not all columns are visible**
-  For now it is possible that some columns will not be visible when some are too wide. There are 2 workarounds for now
-    - View can be scrolled via horizontal scroll bar
-    - Size of other columns can be slimmed 
+## Trucs, astuces et bugs connus
+- **Ajout manuel de plusieurs répertoires**  
+Vous pouvez éditer manuellement le fichier de configuration `czkawka_gui_config.txt` et ajouter/supprimer/modifier des répertoires comme vous le souhaitez. Après avoir défini les valeurs requises, la configuration doit être chargée dans Czkawka.
+
+- **Vérification lente d'un petit nombre d'images similaires**  
+Si vous avez vérifié avant un grand nombre d'images (plusieurs dizaines de milliers) et qu'elles sont toujours présentes sur le disque, les informations requises sur chacune d'entre elles sont chargées et enregistrées dans le cache, même si vous travaillez avec seulement quelques fichiers image. Vous pouvez renommer le fichier cache `cache_similar_image.txt`(pour pouvoir l'utiliser à nouveau) ou le supprimer - le cache se régénérera alors mais avec un plus petit nombre d'entrées et de cette façon, il devrait se charger et enregistrer beaucoup plus rapidement.
+
+- **Toutes les colonnes ne sont pas visibles**
+  Pour l'instant, il est possible que certaines colonnes ne soient pas visibles lorsque certaines sont trop larges. Il y a 2 solutions de contournement pour le moment
+    - La vue peut être défilée via la barre de défilement horizontale
+    - La taille des autres colonnes peut être réduite
   
-  This is handled via https://github.com/qarmin/czkawka/issues/169
+  Ceci est géré via https://github.com/qarmin/czkawka/issues/169
 
 ![AA](https://user-images.githubusercontent.com/41945903/125684641-728e264a-34ab-41b1-9853-ab45dc25551f.png)
 
-# Tools
+# Outils
 
-### Duplicate Finder
+### Recherche de doublons
 
-Duplicate Finder allows you to search for files and group them according to a predefined criterion:
+Duplicate Finder permet de rechercher des fichiers et de les regrouper selon un critère prédéfini :
 
-- **By name** - Compares and groups files by name e.g. `/home/john/cats.txt` will be treated like a duplicate of a file named
-  `/home/lucy/cats.txt`. This is the fastest method, but it is very unreliable and should not be used unless you know
-  what you are doing.
+- **Par nom** - Compare et regroupe les fichiers par nom, par exemple, `/home/john/cats.txt`sera traité comme un doublon d'un fichier nommé `/home/lucy/cats.txt`. C'est la méthode la plus rapide, mais elle est très peu fiable et ne doit pas être utilisée à moins que vous ne sachiez ce que vous faites.
 
-- **By size** - Compares and groups files by their size (in bytes and perfect matches only). It is as fast as the previous mode and
-  usually gives better results with duplicates, but I also do not recommend using it if you do not know what you are doing.
 
-- **By hash** - A mode containing a check of the hash (cryptographic hash) of a given file which determines with great
-  probability whether the files are identical.
+- **Par taille** - Compare et regroupe les fichiers par leur taille (en octets et correspondances parfaites uniquement). Il est aussi rapide que le mode précédent et donne généralement de meilleurs résultats avec les doublons, mais je ne recommande pas non plus de l'utiliser si vous ne savez pas ce que vous faites.
 
-  This is the slowest, but almost 100% sure way to compare the files for being the same.
 
-  Because the hash is only checked inside groups of files of the same size, it is practically impossible for two different
-  files to be considered identical.
+- **Par hachage* - Un mode contenant une vérification du hachage (hachage cryptographique) d'un fichier donné qui détermine avec une grande probabilité si les fichiers sont identiques.
 
-  It consists of 3 steps:
-    - Grouping files of identical size - allows you to throw away files of unique size, which are already known to have no
-      duplicates at this stage.
 
-    - PreHash check - Each group of files of identical size is placed in a queue using all processor threads (each action in
-      the group is independent of the others). In each such group a small fragment of each file (2KB) is loaded in turn and
-      then hashed. All files whose partial hashes are unique within the group are removed from it. Using this step usually
-      allows me to reduce the time of searching for duplicates almost by half.
+  C'est le moyen le plus lent, mais presque sûr à 100%, de comparer les fichiers pour qu'ils soient identiques.
 
-    - Checking the hash - After leaving files that have the same beginning in groups, you should now check the whole contents
-      of the file to make sure they are identical.
+  Comme le hachage n'est vérifié qu'à l'intérieur de groupes de fichiers de même taille, il est pratiquement impossible que deux fichiers différents soient considérés comme identiques.
 
-- **By hashmb** - Works the same way as via hash, only in the last phase it does not calculate the hash of the whole file but only of its first
-  megabyte. It is perfect for quick search of possible duplicate files.
 
-### Empty Files
-Searching for empty files is easy and fast, because we only need to check the file metadata and its length.
+  Il se compose de 3 étapes :
+    - Regrouper des fichiers de taille identique - vous permet de jeter des fichiers de taille unique, qui sont déjà connus pour n'avoir aucun doublon à ce stade.
 
-### Empty Directories
-At the beginning, a special entry is created for each directory containing - the parent path (only if it is not a folder
-directly selected by the user) and a flag to indicate whether the given directory is empty (at the beginning each one is
-set to be potentionally empty).
+    - Vérification PreHash - Chaque groupe de fichiers de taille identique est placé dans une file d'attente en utilisant tous les threads du processeur (chaque action du groupe est indépendante des autres). Dans chacun de ces groupes, un petit fragment de chaque fichier (2 Ko) est chargé à son tour puis haché. Tous les fichiers dont les hachages partiels sont uniques au sein du groupe en sont supprimés. L'utilisation de cette étape me permet généralement de réduire de moitié le temps de recherche de doublons.
 
-First, user-defined folders are put into the pool of folders to be checked.
+    - Vérification du hachage - Après avoir laissé les fichiers qui ont le même début dans les groupes, vous devez maintenant vérifier tout le contenu du fichier pour vous assurer qu'ils sont identiques.
 
-Each element is checked to see if it is:
-- folder - this folder is added to the check queue as possible empty - `FolderEmptiness::Maybe`
-- anything else - the given folder is "poisoned" with the `FolderEmptiness::No` flag, indicating that the folder is no longer
-  empty. Then each folder directly or indirectly containing the file is also poisoned with the `FolderEmptiness::No` flag.
+- **Par hashmb** - Fonctionne de la même manière que via hash, seulement dans la dernière phase, il ne calcule pas le hachage de l'ensemble du fichier mais seulement de son premier mégaoctet. Il est parfait pour une recherche rapide d'éventuels fichiers en double.
 
-Example: there are 4 checked folders which *may* be empty `/cow/`, `/cow/ear/`, `/cow/ear/stack/`, `/cow/ear/flag/`.
+### Fichiers vides
+La recherche de fichiers vides est simple et rapide, car il suffit de vérifier les métadonnées du fichier et sa longueur.
 
-The last folder contains a file, so that means that `/cow/ear/flag` is not empty and also all its parents - `/cow/ear/` and `/cow/`,
-but `/cow/ear/stack/` may still be empty.
+### Répertoires vides
+Au début, une entrée spéciale est créée pour chaque répertoire contenant - le chemin parent (uniquement s'il ne s'agit pas d'un dossier directement sélectionné par l'utilisateur) et un indicateur pour indiquer si le répertoire donné est vide (au début chacun est défini être potentiellement vide).
 
-Finally, all folders with the flag `FolderEmptiness::Maybe` are defaulted to empty.
+Tout d'abord, les dossiers définis par l'utilisateur sont placés dans le pool de dossiers à vérifier.
 
-### Big Files
-For each file inside the given path its size is read and then after sorting the list, e.g. 50 largest, files are displayed.
+Chaque élément est vérifié pour voir s'il est :
+- dossier - ce dossier est ajouté à la file d'attente de vérification comme vide possible - `FolderEmptiness::Maybe`
+- autre chose - le dossier donné est "empoisonné" avec le drapeau`FolderEmptiness::No`, indiquant que le dossier n'est plus vide. Ensuite, chaque dossier contenant directement ou indirectement le fichier est également empoisonné avec le drapeau`FolderEmptiness::No`.
 
-### Temporary Files
-Searching for temporary files only involves comparing their extensions with a previously prepared list.
+Exemple : il y a 4 dossiers cochés qui peuvent être vides `/cow/`, `/cow/ear/`, `/cow/ear/stack/`, `/cow/ear/flag/`.
 
-Currently files with these extensions are considered  temporary files -
+Le dernier dossier contient un fichier, ce qui signifie qu'il `/cow/ear/flag`n'est pas vide ainsi que tous ses parents - `/cow/ear/`et `/cow/`, mais qu'il `/cow/ear/stack/`peut toujours être vide..
+
+Enfin, tous les dossiers avec le drapeau `FolderEmptiness::Maybe` sont par défaut vides.
+
+### Gros fichiers
+Pour chaque fichier à l'intérieur du chemin donné, sa taille est lue, puis après avoir trié la liste, par exemple les 50 plus gros, les fichiers sont affichés.
+
+### Fichiers temporaires
+La recherche de fichiers temporaires consiste uniquement à comparer leurs extensions avec une liste préalablement préparée.
+
 ```
 ["#", "thumbs.db", ".bak", "~", ".tmp", ".temp", ".ds_store", ".crdownload", ".part", ".cache", ".dmp", ".download", ".partial"]
 ```
 
-### Zeroed Files
-Zeroed files very often are results of e.g. incorrect file downloads.
+### Fichiers mis à zéro
+Les fichiers mis à zéro sont très souvent le résultat de téléchargements de fichiers incorrects, par exemple.
 
-Their search consists of 3 steps:
-- Collecting a list of all files with a size greater than 0
-- At start, 64 bytes of each file are checked to discard the vast majority of non-zero files without major performance losses.
-- The next step is to check the rest of the file with bigger parts(32KB)
+Leur recherche comprend 3 étapes:
+- Collecte d'une liste de tous les fichiers d'une taille supérieure à 0
+- Au début, 64 octets de chaque fichier sont vérifiés pour éliminer la grande majorité des fichiers non nuls sans pertes de performances majeures.
+- L'étape suivante consiste à vérifier le reste du fichier avec des parties plus grandes (32 Ko)
+- 
+### Liens symboliques invalides
+Pour trouver des liens symboliques invalides, nous devons d'abord trouver des liens symboliques.
 
-### Invalid Symlinks
-To find invalid symlinks we must first find symlnks.
+Après les avoir recherchés, vous devez vérifier vers quel élément il pointe et s'il n'existe pas, ajoutez ce lien symbolique dans la liste des liens symboliques invalides, pointant vers un chemin inexistant.
 
-After searching for them you should check at which element it points to and if it does not exist, add this symlinks into the list of invalid symlinks, pointing to a non-existent path.
+Le deuxième mode consiste à détecter un lien symbolique récursif. Malheureusement, ce mode ne fonctionne pas et il affiche lors de son utilisation une erreur d'élément cible inexistant, mais il est implémenté en comptant les sauts du lien symbolique et après avoir dépassé un certain nombre (par exemple 20) on considère que le donné le lien symbolique est récursif.
 
-The second mode is to detect recursive symlink. Unfortunately, this mode does not work and it displays when using it an error of a non-existent target element, but it is implemented by counting the jumps of the symlink and after exceeding a certain number (e.g. 20) it is considered that the given symlink is recursive.
+### Même musique
+Il s'agit d'un mode permettant de rechercher des fichiers musicaux identiques via des balises.
 
-### Same Music
-This is a mode to find identical music files through tags.
+Le nombre de balises parmi lesquelles choisir est limité par une bibliothèque externe.
 
-The number of tags to choose from is limited by an external library.
+Tout d'abord, les fichiers musicaux avec l'une des extensions `[".mp3", ".flac", ".m4a"]` are collected.
 
-First, music files with one of the extensions `[".mp3", ".flac", ".m4a"]` are collected.
+Ensuite, pour chaque fichier musical, ses balises sont lues.
 
-Then for each music file its tags are read.
+Ensuite, pour chaque balise sélectionnée par laquelle nous voulons rechercher des doublons, nous effectuons les étapes suivantes :
+- Pour chaque fichier d'entrée, nous lisons la valeur de la balise actuellement vérifiée
+- S'il est vide, on ignore le fichier, s'il a une valeur, on le jette dans un tableau dont la clé est cette valeur
+- Après vérification de tous les fichiers, les tableaux contenant un seul élément sont supprimés
+- Les fichiers restants sont utilisés comme données initiales pour vérifier la prochaine balise sélectionnée par l'utilisateur
+- Après avoir vérifié toutes les balises, les résultats sont affichés en groupes
 
-Then, for each selected tag by which we want to search for duplicates, we perform the following steps:
-- For each input file we read the value of the currently checked tag
-- If it is empty, we ignore the file, if it has a value, we throw it into an array whose key is this value
-- After checking all files, arrays containing only one element are deleted
-- The remaining files are used as initial data for checking the next tag selected by the user
-- After checking all tags, the results are displayed in groups
+### Images similaires
+C'est un outil pour trouver des images similaires qui diffèrent par exemple par le filigrane, la taille, etc.
 
-### Similar Images
-It is a tool for finding similar images that differ e.g. in watermark, size etc.
+L'outil collecte d'abord des images avec des extensions spécifiques qui peuvent être vérifiées -`[".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".pnm", ".tga", ".ff", ".gif", ".jif", ".jfi", ".ico", ".webp", ".avif"]`.
 
-The tool first collects images with specific extensions that can be checked - `[".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".pnm", ".tga", ".ff", ".gif", ".jif", ".jfi", ".ico", ".webp", ".avif"]`.
-
-Next cached data is loaded from file to prevent hashing twice the same file.  
+Les données mises en cache suivantes sont chargées à partir du fichier pour éviter de hacher deux fois le même fichier. 
 The cache which points to non existing data is deleted automatically.
 
-Then a perceptual hash is created for each image which isn't available in cache.
+Le cache qui pointe vers des données non existantes est supprimé automatiquement.
 
-Cryptographic hash (used for example in ciphers) for similar inputs gives completely different outputs:  
+Le hachage cryptographique (utilisé par exemple dans les chiffrements) pour des entrées similaires donne des sorties complètement différentes :   
 11110 ==>  AAAAAB  
 11111 ==>  FWNTLW  
 01110 ==>  TWMQLA
 
-Perceptual hash at similar inputs, gives similar outputs:  
+Hash perceptif à des entrées similaires, donne des sorties similaires :   
 11110 ==>  AAAAAB  
 11111 ==>  AABABB  
 01110 ==>  AAAACB
 
 
-Computed hash data is then thrown into a special tree that allows to compare hashes using [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance).
+Les données de hachage calculées sont ensuite jetées dans un arbre spécial qui permet de comparer les hachages en utilisant la distance [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance).
 
-Next these hashes are saved to file, to be able to open images without needing to hash it more times.
+Ensuite, ces hachages sont enregistrés dans un fichier, pour pouvoir ouvrir les images sans avoir besoin de les hacher plusieurs fois.
 
-Finally, each hash is compared with the others and if the distance between them is less than the maximum distance specified by the user, the images are considered similar and thrown from the pool of images to be searched.
-### Broken Files
-This tool finds files which are corrupted or have an invalid extension.
 
-At first files from specific group (image,archive,audio) are collected and then these files are opened.
+Enfin, chaque hachage est comparé aux autres et si la distance entre eux est inférieure à la distance maximale spécifiée par l'utilisateur, les images sont considérées comme similaires et rejetées du pool d'images à rechercher.
+### Fichiers cassés
+Cet outil trouve les fichiers corrompus ou ayant une extension invalide.
 
-If an error happens when opening such file it means that this file is corrupted or unsupported.
+Au début, les fichiers d'un groupe spécifique (image, archive, audio) sont collectés, puis ces fichiers sont ouverts.
 
-Only some file extensions are supported, because I rely on external crates. Also, some false positives may be shown(e.g. https://github.com/image-rs/jpeg-decoder/issues/130) so always open file to check if it is really broken.
+Si une erreur se produit lors de l'ouverture d'un tel fichier, cela signifie que ce fichier est corrompu ou non pris en charge.
+
+Seules certaines extensions de fichiers sont prises en charge, car je m'appuie sur des caisses externes. De plus, certains faux positifs peuvent être affichés (par exemple https://github.com/image-rs/jpeg-decoder/issues/130 ) alors ouvrez toujours le fichier pour vérifier s'il est vraiment cassé.
