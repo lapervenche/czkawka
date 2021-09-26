@@ -96,7 +96,7 @@ Author: Rafał Mikrut
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Add </property>
+                                    <property name="label" translatable="yes">Ajouter </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -140,7 +140,7 @@ Author: Rafał Mikrut
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Remove  </property>
+                                    <property name="label" translatable="yes">Enlever  </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -184,7 +184,7 @@ Author: Rafał Mikrut
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Manual Add</property>
+                                    <property name="label" translatable="yes">Ajout Manuel</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -247,7 +247,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Included Directories</property>
+                    <property name="label" translatable="yes">Répertoires inclus</property>
                   </object>
                   <packing>
                     <property name="tab-fill">False</property>
@@ -294,7 +294,7 @@ Author: Rafał Mikrut
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Add </property>
+                                    <property name="label" translatable="yes">Ajouter </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -338,7 +338,7 @@ Author: Rafał Mikrut
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Remove  </property>
+                                    <property name="label" translatable="yes">Supprimer  </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -382,7 +382,7 @@ Author: Rafał Mikrut
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">Manual Add</property>
+                                    <property name="label" translatable="yes">Ajout manuel</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -430,7 +430,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Excluded Directories</property>
+                    <property name="label" translatable="yes">Répertoires exclus</property>
                   </object>
                   <packing>
                     <property name="position">1</property>
@@ -448,7 +448,7 @@ Author: Rafał Mikrut
                         <property name="can-focus">False</property>
                         <property name="margin-top">5</property>
                         <property name="margin-bottom">5</property>
-                        <property name="label" translatable="yes">Excluded items must contains * wildcard and should be separated by commas.</property>
+                        <property name="label" translatable="yes">Les éléments exclus doivent contenir *caractères génériques et doivent être séparés par des virgules.</property>
                         <attributes>
                           <attribute name="scale" value="1"/>
                         </attributes>
@@ -464,7 +464,7 @@ Author: Rafał Mikrut
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="margin-bottom">5</property>
-                        <property name="label" translatable="yes">This is slower than Excluded Directories, so use it carefully.</property>
+                        <property name="label" translatable="yes">Ceci est plus lent que les annuaires exclus, alors utilisez-le soigneusement.</property>
                         <attributes>
                           <attribute name="scale" value="1"/>
                         </attributes>
@@ -484,7 +484,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Excluded items</property>
+                            <property name="label" translatable="yes">Articles exclus</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -520,7 +520,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Excluded Items</property>
+                    <property name="label" translatable="yes">Articles exclus</property>
                   </object>
                   <packing>
                     <property name="position">2</property>
@@ -538,7 +538,7 @@ Author: Rafał Mikrut
                         <property name="can-focus">False</property>
                         <property name="margin-top">5</property>
                         <property name="margin-bottom">5</property>
-                        <property name="label" translatable="yes">Allowed extensions must be separated by commas(by default all are available)</property>
+                        <property name="label" translatable="yes">Les extensions autorisées doivent être séparées par des virgules(Par défaut, tous sont disponibles)</property>
                         <attributes>
                           <attribute name="scale" value="1"/>
                         </attributes>
@@ -554,7 +554,7 @@ Author: Rafał Mikrut
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="margin-bottom">5</property>
-                        <property name="label" translatable="yes">Macros IMAGE, VIDEO, MUSIC, TEXT are available</property>
+                        <property name="label" translatable="yes">Macros IMAGE, VIDEO, MUSIC, TEXT sont disponibles</property>
                         <attributes>
                           <attribute name="scale" value="1"/>
                         </attributes>
@@ -590,7 +590,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Allowed Extensions</property>
+                            <property name="label" translatable="yes">Extensions autorisées</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -625,7 +625,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Allowed Extensions</property>
+                    <property name="label" translatable="yes">Extensions autorisées</property>
                   </object>
                   <packing>
                     <property name="position">3</property>
@@ -661,7 +661,7 @@ Author: Rafał Mikrut
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="label" translatable="yes">Check method:</property>
+                                <property name="label" translatable="yes">Méthode de contrôle:</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -701,7 +701,7 @@ Author: Rafał Mikrut
                             </child>
                             <child>
                               <object class="GtkRadioButton" id="radio_button_duplicates_size">
-                                <property name="label" translatable="yes">Size</property>
+                                <property name="label" translatable="yes">Taille</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
@@ -716,7 +716,7 @@ Author: Rafał Mikrut
                             </child>
                             <child>
                               <object class="GtkRadioButton" id="radio_button_duplicates_name">
-                                <property name="label" translatable="yes">Name</property>
+                                <property name="label" translatable="yes">Nom</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
@@ -813,7 +813,7 @@ Author: Rafał Mikrut
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="label" translatable="yes">Size(bytes)</property>
+                                <property name="label" translatable="yes">Taille(bytes)</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -925,7 +925,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Duplicates files</property>
+                    <property name="label" translatable="yes">Fichiers dupliqués</property>
                   </object>
                   <packing>
                     <property name="tab-fill">False</property>
@@ -948,7 +948,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Empty Directories</property>
+                    <property name="label" translatable="yes">Répertoires vides</property>
                   </object>
                   <packing>
                     <property name="position">1</property>
@@ -969,7 +969,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Number of shown files</property>
+                            <property name="label" translatable="yes">Nombre de fichiers affichés</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1023,7 +1023,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Big Files</property>
+                    <property name="label" translatable="yes">Gros fichiers</property>
                   </object>
                   <packing>
                     <property name="position">2</property>
@@ -1047,7 +1047,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Empty Files</property>
+                    <property name="label" translatable="yes">Fichiers vides</property>
                   </object>
                   <packing>
                     <property name="position">3</property>
@@ -1071,7 +1071,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Temporary Files</property>
+                    <property name="label" translatable="yes">Fichiers temporaires</property></property>
                   </object>
                   <packing>
                     <property name="position">4</property>
@@ -1096,7 +1096,7 @@ Author: Rafał Mikrut
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="label" translatable="yes">Size(bytes)</property>
+                                <property name="label" translatable="yes">Taille(bytes)</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1173,7 +1173,7 @@ Author: Rafał Mikrut
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="label" translatable="yes">Similarity </property>
+                                <property name="label" translatable="yes">Similarité </property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1185,7 +1185,7 @@ Author: Rafał Mikrut
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="label" translatable="yes">  Very High  </property>
+                                <property name="label" translatable="yes">  Trés haut </property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -1273,7 +1273,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Similar Images</property>
+                    <property name="label" translatable="yes">Images similaires</property>
                   </object>
                   <packing>
                     <property name="position">5</property>
@@ -1294,7 +1294,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Size(bytes)</property>
+                            <property name="label" translatable="yes">Taille(bytes)</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1370,7 +1370,7 @@ Author: Rafał Mikrut
                         <property name="spacing">8</property>
                         <child>
                           <object class="GtkCheckButton" id="check_button_music_title">
-                            <property name="label" translatable="yes">Title</property>
+                            <property name="label" translatable="yes">Titre</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">False</property>
@@ -1385,7 +1385,7 @@ Author: Rafał Mikrut
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="check_button_music_artist">
-                            <property name="label" translatable="yes">Artist</property>
+                            <property name="label" translatable="yes">Artiste</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">False</property>
@@ -1400,7 +1400,7 @@ Author: Rafał Mikrut
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="check_button_music_album_title">
-                            <property name="label" translatable="yes">Album Title</property>
+                            <property name="label" translatable="yes">Album Titre</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">False</property>
@@ -1414,7 +1414,7 @@ Author: Rafał Mikrut
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="check_button_music_album_artist">
-                            <property name="label" translatable="yes">Album Artist</property>
+                            <property name="label" translatable="yes">Album Artiste</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">False</property>
@@ -1428,7 +1428,7 @@ Author: Rafał Mikrut
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="check_button_music_year">
-                            <property name="label" translatable="yes">Year</property>
+                            <property name="label" translatable="yes">Année</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">False</property>
@@ -1471,7 +1471,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Music Duplicates</property>
+                    <property name="label" translatable="yes">Duplication de musique</property>
                   </object>
                   <packing>
                     <property name="position">6</property>
@@ -1507,7 +1507,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Zeroed Files</property>
+                    <property name="label" translatable="yes">Fichiers à zéro</property>
                   </object>
                   <packing>
                     <property name="position">7</property>
@@ -1531,7 +1531,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Invalid Symlinks</property>
+                    <property name="label" translatable="yes">Symboles non valides</property>
                   </object>
                   <packing>
                     <property name="position">8</property>
@@ -1555,7 +1555,7 @@ Author: Rafał Mikrut
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Broken Files</property>
+                    <property name="label" translatable="yes">Fichiers cassés</property>
                   </object>
                   <packing>
                     <property name="position">9</property>
@@ -1615,7 +1615,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Search</property>
+                            <property name="label" translatable="yes">Rechercher</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1692,7 +1692,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Select</property>
+                            <property name="label" translatable="yes">Sélectionner</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1736,7 +1736,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Delete</property>
+                            <property name="label" translatable="yes">Supprimer</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1780,7 +1780,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Save</property>
+                            <property name="label" translatable="yes">Sauver</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1824,7 +1824,7 @@ Author: Rafał Mikrut
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Symlink</property>
+                            <property name="label" translatable="yes">Symboles</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
