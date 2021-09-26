@@ -34,7 +34,7 @@ Author: Rafał Mikrut
   <!-- interface-authors Rafa\305\202 Mikrut -->
   <object class="GtkWindow" id="window_progress">
     <property name="can-focus">False</property>
-    <property name="title" translatable="yes">Czkawka Progress Window</property>
+    <property name="title" translatable="yes">Czkawka Fenêtre de progression</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -54,7 +54,7 @@ Author: Rafał Mikrut
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">All stages: </property>
+                <property name="label" translatable="yes">Toutes les étapes: </property>
               </object>
               <packing>
                 <property name="left-attach">0</property>
@@ -78,7 +78,7 @@ Author: Rafał Mikrut
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Current stage:  </property>
+                <property name="label" translatable="yes">Étape actuelle:  </property>
               </object>
               <packing>
                 <property name="left-attach">0</property>
@@ -107,7 +107,7 @@ Author: Rafał Mikrut
           <object class="GtkLabel" id="label_stage">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Stage 1/2</property>
+            <property name="label" translatable="yes">Étape 1/2</property>
           </object>
           <packing>
             <property name="expand">False</property>
